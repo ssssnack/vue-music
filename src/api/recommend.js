@@ -17,6 +17,10 @@ export function getRecommend() {
 export function getDiscList() {
     const url = '/api/getDiscList'
     const data =Object.assign({},commonParams,{
+        g_tk: 5381,
+        notice: 0,
+        inCharset: 'utf8',
+        outCharset: 'utf-8',
         platform: 'yqq',
         hostUin: 0,
         sin: 0,
