@@ -5,13 +5,14 @@
 </template>
 
 <script>
+import Scroll from 'base/scroll/scroll'
 export default {
-    //接受数据
+  //接受数据
   props: {
-      data: {
-          type: Array,
-          default: []
-      }
+    data: {
+      type: Array,
+      default: []
+    }
   }
 };
 </script>
