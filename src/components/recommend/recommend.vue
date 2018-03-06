@@ -27,13 +27,17 @@
       </ul>
     </div>
     </div>
+  <div class="loading-container" v-show="!discList.length">
+    <loading></loading>
+  </div>
   </scroll>
 </div>
 </template>
 
 <script>
 /* eslint-disable */
-import Scroll from 'base/scroll/scroll'
+import Loading from "base/loading/loading";
+import Scroll from "base/scroll/scroll";
 import Slider from "base/slider/slider";
 import { getRecommend, getDiscList } from "api/recommend";
 import { ERR_OK } from "api/config";
@@ -48,7 +52,6 @@ export default {
   created() {
     this._getRecommend();
     this._getDiscList();
-  
   },
   methods: {
     _getRecommend() {
@@ -66,16 +69,16 @@ export default {
       });
     },
     loadImage() {
-      if(!this.checkLoaded){
-        this.$refs.scroll.refresh()
-        this.checkLoaded =true
+      if (!this.checkLoaded) {
+        this.$refs.scroll.refresh();
+        this.checkLoaded = true;
       }
-      
     }
   },
   components: {
     Slider,
-    Scroll
+    Scroll,
+    Loading
   }
 };
 </script>
